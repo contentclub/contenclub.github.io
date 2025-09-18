@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contentclub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Space Mono', monospace;
+            font-weight: 400;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            /* Standaard stijl: wit met zwarte rand */
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: none;
+            /* Zorgt ervoor dat de links niet verschuiven als ze niet actief zijn */
+            transform: translateY(0);
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            /* Actieve stijl: zwart met wit reliëf */
+            color: white;
+            background-color: black;
+            border: 1px solid black;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .scroll-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .divider {
+            height: 1px;
+            width: 50%;
+            background-color: black;
+            opacity: 0.1;
+        }
+
+        /* Nieuwe stijlen voor typemachine-effect */
+        .typing-cursor {
+            border-right: .15em solid black;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        /* Cursor-animatie */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: black
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-50 text-black selection:bg-gray-200 selection:text-black">
+
+    <!-- Vaste Koptekst -->
+    <header
+        class="fixed top-0 left-0 w-full z-10 p-6 flex justify-between items-center text-sm font-semibold bg-white bg-opacity-70 backdrop-blur-md">
+        <a href="#intro" class="text-base font-bold uppercase">Contentclub</a>
+        <nav class="flex items-center space-x-6">
+            <a href="#shoots" class="nav-link">Contentshoots</a>
+            <a href="#websites" class="nav-link">Jouw Website</a>
+            <a href="#reviews" class="nav-link">Content Reviews</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container met Verticale Secties -->
+    <div class="vertical-scroll-container">
+
+        <!-- Sectie 1: Introductie van Contentclub -->
+        <div id="intro" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h1 class="text-5xl md:text-6xl font-bold uppercase tracking-tighter text-center leading-none mb-4">
+                    Contentclub.
+                </h1>
+                <h2 id="intro-subtitle"
+                    class="text-lg md:text-xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Jouw verhaal, online.
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-sm md:text-base leading-snug text-center mb-6 text-gray-600">
+                        Wij faciliteren de creatie van online content. We bieden de ruimte en de middelen om jouw
+                        verhalen in beeld online te brengen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider w-1/2 mx-auto my-16"></div>
+
+        <!-- Sectie 2: Contentshoots -->
+        <div id="shoots" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Contentshoots
+                </h2>
+                <div class="w-full max-w-sm mx-auto my-16">
+                    <img src="https://placehold.co/400x400/D4D4D4/000000?text=MINIMALISTISCHE+CAMERA"
+                        class="w-full h-auto rounded-lg" alt="Minimalistische camera met strakke lijnen.">
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-sm md:text-base leading-snug text-center mb-6 text-gray-600">
+                        We organiseren shoots waar bedrijven, content creators en fotografen zorgeloos en efficiënt
+                        beelden kunnen komen maken. Sommige sessies zijn gericht op het opdoen van ervaring en het leren
+                        van nieuwe technieken. Andere zijn bedoeld om direct bruikbare content te maken voor sociale
+                        media, campagnes of portfolio’s.
+                    </p>
+                    <p class="text-sm md:text-base leading-snug text-center text-gray-600">
+                        Tijdens de shoots kun je gebruikmaken van de voorziene belichting, camera’s, modellen en
+                        rekwisieten of kan je gebruik maken van je eigen materiaal en talent.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider w-1/2 mx-auto my-16"></div>
+
+        <!-- Sectie 3: Jouw Website -->
+        <div id="websites" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Jouw Website
+                </h2>
+                <div class="w-full max-w-sm mx-auto my-16">
+                    <img src="https://placehold.co/400x400/D4D4D4/000000?text=CMS+SCHERM"
+                        class="w-full h-auto rounded-lg"
+                        alt="Een minimalistisch CMS-scherm met strakke, georganiseerde blokken.">
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-sm md:text-base leading-snug text-center mb-6 text-gray-600">
+                        Je content op je eigen site. Met een CMS-website van Contentclub breng je jouw verhaal
+                        rechtstreeks online. Geen afhankelijkheid van platforms zoals Instagram of TikTok, en geen
+                        technische kennis nodig. Jouw content, onder jouw voorwaarden.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider w-1/2 mx-auto my-16"></div>
+
+        <!-- Sectie 4: Content Reviews -->
+        <div id="reviews" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Content Reviews
+                </h2>
+                <div class="w-full max-w-sm mx-auto my-16">
+                    <img src="https://placehold.co/400x400/D4D4D4/000000?text=KRITISCH+KIJKEN"
+                        class="w-full h-auto rounded-lg"
+                        alt="Een minimalistisch persoon die kritisch kijkt naar een scherm.">
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-sm md:text-base leading-snug text-center mb-6 text-gray-600">
+                        Stop met eindeloos scrollen. Wij nemen een diepe duik in het werk van makers en content, voorbij
+                        de algoritmes. Van TikTok-trolls tot YouTube-sterren, we analyseren de ambacht achter de
+                        verhalen. Want soms is de "beste" content niet de content die viraal gaat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider w-1/2 mx-auto my-16"></div>
+
+        <!-- Sectie 5: Contact -->
+        <div id="contact" class="scroll-section">
+            <div class="max-w-3xl w-full">
+                <div class="container px-4 md:px-8">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-none mb-12 text-center">
+                        Contact
+                    </h2>
+                </div>
+                <div class="w-full max-w-sm mx-auto my-16">
+                    <img src="https://placehold.co/400x400/D4D4D4/000000?text=SCHRIJVEN+OP+FORMULIER"
+                        class="w-full h-auto rounded-lg" alt="Een minimalistische hand die op een formulier schrijft.">
+                </div>
+                <div class="max-w-3xl w-full mx-auto p-8 rounded-2xl">
+                    <p class="mb-4 text-gray-600 text-center text-sm md:text-base">Vertel ons over jouw idee of project,
+                        en we denken graag mee.</p>
+                    <form class="space-y-6">
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <input type="text" id="naam"
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="Naam" />
+                            <label for="naam"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Naam</label>
+                        </div>
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <input type="email" id="email"
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="Email" />
+                            <label for="email"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Email</label>
+                        </div>
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <textarea id="jouwVraag"
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                rows="4" placeholder="Jouw vraag"></textarea>
+                            <label for="jouwVraag"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Jouw
+                                vraag</label>
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="submit"
+                                class="inline-block px-6 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors">
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav .nav-link');
+            const sections = document.querySelectorAll('.scroll-section');
+            const formInputs = document.querySelectorAll('form input, form textarea');
+
+            // Handle input focus for floating labels
+            formInputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.querySelector('label').classList.add('-top-4', 'scale-75');
+                    input.parentElement.querySelector('label').classList.remove('top-2', 'scale-100');
+                });
+                input.addEventListener('blur', () => {
+                    if (input.value === '') {
+                        input.parentElement.querySelector('label').classList.remove('-top-4', 'scale-75');
+                        input.parentElement.querySelector('label').classList.add('top-2', 'scale-100');
+                    }
+                });
+            });
+
+            // Functie voor het typemachine-effect
+            function typeEffect(element, text, speed = 50) {
+                let i = 0;
+                const textNode = document.createTextNode('');
+                const cursorSpan = document.createElement('span');
+                cursorSpan.classList.add('typing-cursor');
+                element.innerHTML = '';
+                element.appendChild(textNode);
+                element.appendChild(cursorSpan);
+
+                const interval = setInterval(() => {
+                    if (i < text.length) {
+                        textNode.nodeValue += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            if (element.contains(cursorSpan)) {
+                                element.removeChild(cursorSpan);
+                            }
+                        }, 1000); // Wacht een seconde voordat de cursor verdwijnt
+                    }
+                }, speed);
+            }
+
+            // Intersection Observer om de actieve navigatielink bij te werken en animaties te triggeren
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Lager drempel om eerder te triggeren
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const sectionId = entry.target.id;
+                    const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+
+                    // Markeer de actieve link
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        if (navLink) {
+                            navLink.classList.add('active');
+                        }
+
+                        // Eenmalige fade-in animatie
+                        if (!entry.target.classList.contains('is-visible')) {
+                            entry.target.classList.add('is-visible');
+                        }
+
+                        // Activeer het typemachine-effect op de titel van de sectie
+                        const titleElement = entry.target.querySelector('h2');
+                        const introSubtitle = document.getElementById('intro-subtitle');
+
+                        if (titleElement && !titleElement.hasAttribute('data-typed')) {
+                            const originalText = titleElement.textContent.trim();
+                            typeEffect(titleElement, originalText);
+                            titleElement.setAttribute('data-typed', 'true');
+                        } else if (introSubtitle && entry.target.id === 'intro' && !introSubtitle.hasAttribute('data-typed')) {
+                            const originalText = introSubtitle.textContent.trim();
+                            typeEffect(introSubtitle, originalText);
+                            introSubtitle.setAttribute('data-typed', 'true');
+                        }
+
+                    } else {
+                        // Verwijder de active class als de sectie niet meer in beeld is
+                        if (navLink) {
+                            navLink.classList.remove('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
