@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body class="bg-neutral-50 text-black selection:bg-gray-200 selection:text-black">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="vertical-scroll-container">
+
+        <!-- Sectie: Contentprofielen -->
+        <div id="reviews" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Contentprofielen
+                </h2>
+                <div class="max-w-4xl mx-auto mb-12">
+                    <p class="text-sm md:text-base leading-snug text-center text-gray-600">
+                        We nemen een diepe duik in het werk van toonaangevende creators, voorbij de algoritmes.
+                        Hieronder zie je de profielen van een aantal grote namen.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl mx-auto">
+                    <!-- Creator Card 1 -->
+                    <div
+                        class="bg-white border-2 border-black rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x300/D4D4D4/000000?text=PEWDIEPIE"
+                                alt="Afbeelding van creator PewDiePie" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-2 right-2 bg-black text-white px-3 py-1 text-sm font-bold uppercase rounded-full">Gaming</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold uppercase mb-2">PewDiePie</h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Felix Kjellberg, een Zweedse youtuber die wereldwijd bekend is om zijn "Let's
+                                Play"-video's en komische content.
+                            </p>
+                            <div class="flex items-center justify-between font-bold text-sm text-gray-800">
+                                <span>Level: 98</span>
+                                <span>Views: 29B+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Creator Card 2 -->
+                    <div
+                        class="bg-white border-2 border-black rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x300/A0A0A0/000000?text=CHAMBERLAIN"
+                                alt="Afbeelding van creator Emma Chamberlain" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-2 right-2 bg-black text-white px-3 py-1 text-sm font-bold uppercase rounded-full">Lifestyle</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold uppercase mb-2">Emma Chamberlain</h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Een Amerikaanse youtuber en podcaster die de 'realistische' vlogs en de 'no-filter'
+                                esthetiek populair heeft gemaakt.
+                            </p>
+                            <div class="flex items-center justify-between font-bold text-sm text-gray-800">
+                                <span>Level: 92</span>
+                                <span>Views: 2.5B+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Creator Card 3 -->
+                    <div
+                        class="bg-white border-2 border-black rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x300/777777/000000?text=VERITASIUM"
+                                alt="Afbeelding van creator Veritasium" class="w-full h-48 object-cover">
+                            <span
+                                class="absolute top-2 right-2 bg-black text-white px-3 py-1 text-sm font-bold uppercase rounded-full">Art
+                                & Science</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold uppercase mb-2">Veritasium</h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Derek Muller, een wetenschapscommunicator die complexe onderwerpen uitlegt met
+                                experimenten en interviews.
+                            </p>
+                            <div class="flex items-center justify-between font-bold text-sm text-gray-800">
+                                <span>Level: 96</span>
+                                <span>Views: 3.5B+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

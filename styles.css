@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --color-lime: #c7f201;
+    --color-mint: #b0f4d3;
+    --color-pink: #f4b0d3;
+}
+
+.bg-lime {
+    background-color: var(--color-lime);
+}
+
+.bg-mint {
+    background-color: var(--color-mint);
+}
+
+.bg-pink {
+    background-color: var(--color-pink);
+}
+
+.hover\:bg-pink:hover {
+    background-color: var(--color-pink);
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+}
+
+h1,
+h2 {
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-link {
+    transition: all 0.2s ease-in-out;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.scroll-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-section:first-of-type {
+    padding-top: 6rem; /* Zorgt voor ruimte boven de eerste sectie */
+}
+
+.scroll-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.divider {
+    height: 1px;
+    width: 50%;
+    background-color: black;
+    opacity: 0.1;
+}
+
+.typing-cursor {
+    border-right: .15em solid black;
+    animation: blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.flatpickr-calendar {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid black !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+    background: black !important;
+    border-color: black !important;
+    color: white !important;
+}
+
+.flatpickr-day.today.selected {
+    color: white !important;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+    max-height: 500px;
+}
+
+/* Custom CSS voor de Hamburger-naar-X animatie */
+
+/* Pas de verticale afstand aan totdat de X mooi uitlijnt */
+#mobile-menu-button span {
+    margin-bottom: 4px; 
+}
+
+/* X-transformatie wanneer menu-open klasse actief is */
+#mobile-menu-button.menu-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+#mobile-menu-button.menu-open span:nth-child(2) {
+    opacity: 0; /* Middelste lijn verbergen */
+}
+
+#mobile-menu-button.menu-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}

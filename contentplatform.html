@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jouw Contentplatform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body class="bg-neutral-50 text-black selection:bg-gray-200 selection:text-black">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="vertical-scroll-container">
+
+        <!-- Sectie: Jouw Contentplatform -->
+        <div id="platform" class="scroll-section">
+            <div class="container w-full max-w-7xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-center leading-none mb-12">
+                    Bouw je eigen contentplatform
+                </h2>
+                <div class="w-full max-w-sm mx-auto my-16">
+                    <img src="https://placehold.co/400x400/E5E7EB/1F2937?text=WEB+DESIGN"
+                        class="w-full h-auto rounded-lg" alt="Webdesign in minimalistische stijl.">
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-sm md:text-base leading-snug text-center mb-6 text-gray-600">
+                        Je content op je eigen site. We bouwen een Content Management Systeem (CMS) dat je de vrijheid
+                        geeft om jouw verhaal rechtstreeks online te publiceren en te distribueren. Geen afhankelijkheid
+                        meer van platforms zoals Instagram of TikTok, en geen technische kennis nodig. Jouw content,
+                        onder jouw voorwaarden.
+                    </p>
+                </div>
+
+                <!-- START: Pakket Module -->
+                <section class="mx-auto py-16">
+                    <div class="container mx-auto px-4 flex flex-col">
+                        <div class="max-w-4xl mx-auto bg-white border border-black rounded-2xl p-8 md:p-12">
+                            <h3 id="package-title" class="text-2xl font-bold mb-4 md:mb-8">Starterspakket: Website</h3>
+                            <p class="mb-4">
+                                Jouw content, op jouw eigen platform. Een solide basis voor jouw online avontuur vanaf
+                                €1000 — zonder verborgen of terugkerende kosten.
+                            </p>
+                            <p class="mb-8 font-normal text-gray-600">
+                                Een platform dat met je meegroeit, volledig aanpasbaar is en waar je de volledige
+                                controle hebt over je content.
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-lg font-bold mb-4">Wat krijg je?</h4>
+                                    <ul id="included-items" class="space-y-4">
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Je eigen domeinnaam</li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 In lijn met je huisstijl
+                                        </li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Veilige hosting</li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Werkt op ieder toestel</li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Simpel aanpasbaar</li>
+                                    </ul>
+                                    <div id="extra-section" class="mt-6 hidden">
+                                        <h4 class="text-lg font-bold mb-4">Extra's</h4>
+                                        <ul id="extra-items" class="space-y-4"></ul>
+                                    </div>
+                                    <div class="text-lg font-bold mt-8">
+                                        <p class="mb-8 font-normal">Jouw pakket: <span id="total-price">€1000</span></p>
+                                    </div>
+                                    <a href="contact.html"
+                                        class="px-6 py-2 border border-black hover:bg-black hover:text-white transition-colors duration-350 rounded-full text-sm font-semibold uppercase">
+                                        Meer info
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-lg font-bold mb-4">Extra opties</h4>
+                                    <p class="text-sm mb-4 italic text-gray-600">Klik een extra optie om toe te voegen.
+                                    </p>
+                                    <ul id="extra-options" class="space-y-4">
+                                        <li class="draggable-item px-3 py-2 border rounded-xl bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer"
+                                            data-price="750" data-label="Multilinguale functionaliteit">
+                                            🌍 Multilinguale functionaliteit (€750)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border rounded-xl bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer"
+                                            data-price="600" data-label="Gebruikers- en rollenbeheer">
+                                            🧑‍🤝‍🧑 Gebruikers- en rollenbeheer (€600)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border rounded-xl bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer"
+                                            data-price="400" data-label="Community functies & commentaarsectie">
+                                            💬 Community functies & commentaarsectie (€400)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border rounded-xl bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer"
+                                            data-price="300" data-label="Geavanceerde zoekfunctie & filters">
+                                            🔍 Geavanceerde zoekfunctie & filters (€300)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- END: Pakket Module -->
+
+                <!-- START: Voordelen -->
+                <section class="mx-auto py-16">
+                    <div class="mx-auto px-4 flex flex-col">
+                        <div class="max-w-4xl mx-auto bg-neutral-50 border-2 border-black rounded-2xl p-8 md:p-12">
+                            <h3 class="text-2xl font-bold mb-8">
+                                Waarom kies je voor Contentclub
+                            </h3>
+                            <div class="space-y-8">
+                                <div class="border-2 border-black rounded-lg overflow-hidden bg-lime">
+                                    <button class="accordion-header w-full px-4 py-4 text-lg font-bold text-left">
+                                        Gratis advies
+                                    </button>
+                                    <div
+                                        class="accordion-content px-4 py-4 border-t-2 border-black bg-white font-normal">
+                                        We luisteren graag naar jouw verhaal en geven steeds vrijblijvend ons beste
+                                        advies.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden bg-lime">
+                                    <button class="accordion-header w-full px-4 py-4 text-lg font-bold text-left">
+                                        Op maat gemaakt, binnen je budget
+                                    </button>
+                                    <div
+                                        class="accordion-content px-4 py-4 border-t-2 border-black bg-white font-normal">
+                                        We gaan steeds op zoek naar de meest geschikte oplossing die het best aansluit
+                                        bij je noden en past binnen je budget.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden bg-lime">
+                                    <button class="accordion-header w-full px-4 py-4 text-lg font-bold text-left">
+                                        Makkelijk schaalbaar
+                                    </button>
+                                    <div
+                                        class="accordion-content px-4 py-4 border-t-2 border-black bg-white font-normal">
+                                        We bouwen op maat gemaakte websites en applicaties die geen technische
+                                        beperkingen kennen en zich eenvoudig kunnen aanpassen aan de groeiende en
+                                        veranderende behoeften van je bedrijf.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg bg-lime overflow-hidden">
+                                    <button class="accordion-header w-full px-4 py-4 text-lg font-bold text-left">
+                                        Duidelijke tarieven
+                                    </button>
+                                    <div
+                                        class="accordion-content px-4 py-4 border-t-2 border-black bg-white font-normal">
+                                        We communiceren vooraf duidelijk over alle kosten, waaronder jaarlijkse
+                                        terugkerende bedragen en tarieven voor aanpassingen of uitbreidingen. We bieden
+                                        je enkel aan wat nodig is, zonder overbodige voorstellen of verborgen kosten.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg bg-lime overflow-hidden">
+                                    <button class="accordion-header w-full px-4 py-4 text-lg font-bold text-left">
+                                        Duurzame samenwerking
+                                    </button>
+                                    <div
+                                        class="accordion-content px-4 py-4 border-t-2 border-black bg-white font-normal">
+                                        Ons doel is een langdurige samenwerking, en we streven niet naar snelle winst.
+                                        Als we je op een bepaald moment niet optimaal kunnen helpen, delen we graag ons
+                                        advies en verwijzen we je door naar iemand die beter past bij je vraag.
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="contact.html"
+                                class="w-fit inline-block px-6 py-2 mt-8 border-2 border-black rounded-full bg-mint hover:bg-pink transition-colors duration-350 text-base font-bold">
+                                Krijg gratis advies
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- END: Voordelen -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

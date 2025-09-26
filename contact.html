@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/nl.js"></script>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-neutral-50 text-black selection:bg-gray-200 selection:text-black">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="vertical-scroll-container">
+
+        <!-- Sectie: Contact -->
+        <div id="contact" class="scroll-section">
+            <div class="max-w-3xl w-full">
+                <div class="container px-4 md:px-8">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-none mb-12 text-center">
+                        Contact</h2>
+                </div>
+                <div class="max-w-3xl w-full mx-auto p-8 rounded-2xl">
+                    <p class="mb-4 text-gray-600 text-center text-sm md:text-base">Vertel ons over jouw idee of project,
+                        en we denken graag mee.</p>
+
+                    <form class="space-y-6">
+                        <!-- Productkeuze -->
+                        <div class="relative">
+                            <label for="productSelect" class="block text-sm font-medium text-gray-700">Waarover gaat je
+                                aanvraag?</label>
+                            <select id="productSelect" name="product"
+                                class="w-full p-2 border-2 border-black rounded-lg mt-1 focus:outline-none focus:ring-0">
+                                <option value="">Kies een optie</option>
+                                <option value="Starterspakket">Starterspakket</option>
+                                <option value="JoinEenContentshoot">Join een Shoot</option>
+                                <option value="DIYShoot">DIY Shoot</option>
+                                <option value="Contentstudio">Content Studio</option>
+                                <option value="FotograafOpBestelling">Fotograaf op Bestelling</option>
+                                <option value="BouwJeContentproductieomgeving">Bouw je Contentproductie omgeving
+                                </option>
+                                <option value="AndereVraag">Andere vraag</option>
+                            </select>
+                        </div>
+
+                        <!-- Datepicker -->
+                        <div class="mt-6 relative border-b border-black focus-within:border-black">
+                            <input id="afspraak" type="text"
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="Selecteer datum" />
+                            <label for="afspraak"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Selecteer
+                                een datum en tijd</label>
+                        </div>
+
+                        <div id="blockedInfo" class="mt-4 text-sm text-gray-600 space-y-2"></div>
+
+                        <!-- Naam -->
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <input type="text" id="name" name="name" required
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="Naam" />
+                            <label for="name"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Naam</label>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <input type="email" id="email" name="email" required
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="E-mailadres" />
+                            <label for="email"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">E-mailadres</label>
+                        </div>
+
+                        <!-- Bericht -->
+                        <div class="relative border-b border-black focus-within:border-black">
+                            <textarea id="message" name="message" rows="5" required
+                                class="block w-full appearance-none bg-transparent focus:outline-none focus:ring-0 focus:border-black py-2 pl-0 pr-3 peer text-sm md:text-base placeholder-transparent"
+                                placeholder="Jouw vraag"></textarea>
+                            <label for="message"
+                                class="absolute top-2 left-0 -z-1 origin-0 transition-all text-gray-500 duration-200 peer-focus:-top-4 peer-focus:scale-75 peer-focus:text-black peer-placeholder-shown:top-2 peer-placeholder-shown:scale-100">Je
+                                vraag of extra info</label>
+                        </div>
+
+                        <!-- Verzenden knop -->
+                        <div class="flex justify-center">
+                            <button type="submit"
+                                class="inline-block px-6 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors">
+                                Verzenden
+                            </button>
+                        </div>
+
+                        <!-- Info onderaan -->
+                        <p class="text-xs text-gray-600 mt-6 leading-relaxed text-center">
+                            We verwerken je vraag of bestelling zo snel mogelijk. Zodra we je bestelling hebben
+                            verwerkt, ontvang je van ons een betalingsverzoek. Na ontvangst van je betaling is je
+                            bestelling bevestigd.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
