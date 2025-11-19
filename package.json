@@ -1,0 +1,28 @@
+{
+  "name": "contentclub",
+  "version": "1.0.0",
+  "description": "Content Club: Breng jouw verhaal online",
+  "homepage": "https://github.com/pieter-vdr/contentclub#readme",
+  "bugs": {
+    "url": "https://github.com/pieter-vdr/contentclub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pieter-vdr/contentclub.git"
+  },
+  "author": "Pieter Vandereyken",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npx @tailwindcss/cli -i ./input.css -o ./style.css --watch\" \"lite-server\""
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "tailwindcss": "^4.0.14"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "lite-server": "^2.6.1"
+  }
+}

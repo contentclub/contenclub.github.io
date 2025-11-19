@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentClub - ContentTools</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body class="text-black selection:bg-yellow selection:text-black geometric-scatter">
+    <svg id="noise-filter" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+        <filter id="grainy-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComposite operator="in" in2="SourceGraphic" result="grain" />
+            <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+        </filter>
+
+        <filter id="grainy-noise-2">
+            <feTurbulence type="fractalNoise" baseFrequency="0.67" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComposite operator="in" in2="SourceGraphic" result="grain" />
+            <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+        </filter>
+
+        <filter id="blob-shape">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -7
+            " result="goo" />
+        </filter>
+    </svg>
+
+    <div id="header-placeholder"></div>
+
+    <div class="vertical-scroll-container scroll-section">
+
+        <section id="contenttools" class="mt-24 mb-32 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+
+                <!-- Kop -->
+                <h1
+                    class="text-5xl md:text-6xl font-extrabold uppercase tracking-tighter mb-6 bg-gradient-to-r from-black via-gray-700 to-black bg-clip-text text-transparent">
+                    ContentTools
+                </h1>
+
+                <!-- Subtitel -->
+                <h2 class="text-xl md:text-2xl text-gray-800 font-medium mb-8 italic">
+                    Digitale tools op maat van contentcreators.
+                </h2>
+
+                <!-- Beschrijving -->
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto mb-10">
+                    <strong>ContentTools</strong> zijn gespecialiseerde <mark
+                        class="bg-yellow text-black px-1.5">applicaties</mark> voor
+                    contentcreators. Van een
+                    persoonlijke <mark class="bg-yellow text-black px-1.5">website</mark> tot een volledig <mark
+                        class="bg-yellow text-black px-1.5">platform</mark> om merchandise,
+                    cursussen of exclusieve content te
+                    verkopen, <i><strong>wij bouwen jouw online habitat</strong></i>.
+                </p>
+
+            </div>
+        </section>
+
+        <section id="platform" class="mb-8 mt-16">
+            <div class="container w-full max-w-7xl px-4 md:px-8 mx-auto">
+
+                <section class="mx-auto mb-16" id="package">
+                    <div class="max-w-4xl mx-auto bg-milk border-2 border-black rounded-3xl p-8 md:p-12"
+                        ondragover="allowDrop(event)" ondrop="drop(event)">
+
+                        <p class="text-2xl md:text-2xl font-bold uppercase tracking-tighter leading-none mb-8">
+                            Contentplatform
+                        </p>
+
+                        <div class="max-w-4xl mx-auto mb-16">
+                            <p class="text-lg leading-relaxed mb-16">
+                                Bouw je eigen online platform dat
+                                je
+                                in staat stelt jouw verhaal rechtstreeks naar
+                                je volgers te brengen,
+                                onafhankelijk van platforms zoals Instagram of TikTok.
+                                Jouw content, jouw platform, onder jouw voorwaarden.
+                            </p>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-8">Jouw platform:</h3>
+
+                        <div class="container flex flex-col">
+                            <div class="space-y-8">
+                                <p class="text-base md:text-lg text-gray-700">
+                                    Wij ontwikkelen een platform dat klaar is om makkelijk mee te groeien met je
+                                    veranderende
+                                    online
+                                    behoeften, dat
+                                    <mark class="bg-yellow text-black px-1.5"> onbeperkt
+                                        aanpasbaar</mark> is en waarover je steeds de <mark
+                                        class="bg-yellow text-black px-1.5">volledige controle</mark>
+                                    hebt.
+                                </p>
+                                <p class="text-base md:text-lg leading-relaxed text-gray-700  mb-16">
+                                    Ons basisplatform is toegankelijk geprijsd en vormt een solide basis voor jouw
+                                    online
+                                    contentavontuur.
+                                </p>
+                            </div>
+
+                            <div class="mb-8">
+                                <span class="font-bold text-xl text-black">
+                                    Basisprijs: <span id="base-price-display">€1000</span>
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                                <div class="order-1 md:order-2">
+                                    <h4 class="text-lg font-bold mb-16 border-b pb-4 border-black">🚀 Extra Opties
+                                        <span class="text-sm">(sleep
+                                            of klik)</span>
+                                    </h4>
+
+                                    <ul id="extra-options" class="space-y-4 text-sm">
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="300" data-label="Zelf posts toevoegen">
+                                            Zelf posts toevoegen (+ €300)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="150"
+                                            data-label="Integratie van je social media posts">
+                                            Social media posts tonen(+ €150)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="100"
+                                            data-label="Bezoekers aan je mailinglijst toevoegen">
+                                            Mailinglijst opbouwen (+ €100)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="200"
+                                            data-label="Je eigen producten verkopen op je site">
+                                            Producten verkopen (+ €200)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="200" data-label="Betaalde Content verkopen">
+                                            Betaalde Content verkopen (+ €200)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="100"
+                                            data-label="Afspraakmodule om calls of shoots te boeken">
+                                            Afspraakmodule (+ €100)
+                                        </li>
+                                        <li class="draggable-item px-3 py-2 border border-black rounded-full bg-white hover:bg-mint transition-colors duration-200"
+                                            draggable="true" data-price="50"
+                                            data-label="Bezoekersstatistieken opvolgen">
+                                            Bezoekersstatistieken opvolgen (+ €50)
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="order-2 md:order-1">
+                                    <h4 class="text-lg font-bold mb-16 border-b pb-4 border-gray-300">Jouw Pakket
+                                    </h4>
+                                    <ul id="included-items" class="space-y-8 text-lg">
+                                        <li class="flex items-center gap-2 font-semibold">🗸 In lijn met je
+                                            huisstijl
+                                        </li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Gratis hosting
+                                        </li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Je eigen domeinnaam
+                                        </li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Werkt op alle
+                                            toestellen
+                                        </li>
+                                        <li class="flex items-center gap-2 font-semibold">🗸 Makkelijk aanpasbaar
+                                        </li>
+                                    </ul>
+
+                                    <div id="extra-section" class="mt-6 hidden">
+                                        <h4 class="text-lg font-bold mb-16">Extra Functionaliteiten</h4>
+                                        <ul id="extra-items" class="space-y-3"></ul>
+                                    </div>
+
+                                    <div class="text-lg font-bold mt-16">
+                                        <p class="mb-16 font-normal">Totaal: <span id="total-price">€1000</span>
+                                        </p>
+                                    </div>
+                                    <a href="contact.html" id="contact-link"
+                                        class="w-fit inline-block text-center px-6 py-2 border-2 border-black bg-mint hover:bg-pink transition-colors duration-350 rounded-full text-base font-semibold uppercase">
+                                        Meer info
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- <section id="tool-suggestie" class="my-32 text-center px-6">
+                    <div class="max-w-4xl mx-auto">
+
+                        <h2 class="text-3xl md:text-4xl font-extrabold uppercase tracking-tighter mb-6">
+                            Heb jij een idee voor een nieuwe tool?
+                        </h2>
+
+                        <p class="text-lg md:text-xl text-gray-700 mb-10">
+                            Misschien mis je een specifieke functie, of heb je een idee voor iets dat jouw workflow
+                            eenvoudiger maakt.
+                            <span class="font-semibold">Vertel het ons — we denken mee en bouwen iets unieks voor
+                                jou.</span>
+                        </p>
+
+                        <a href="contact.html"
+                            class="inline-block px-10 py-4 border-2 border-black rounded-full bg-mint hover:bg-pink transition-colors duration-300 font-bold uppercase shadow-md text-lg">
+                            Deel jouw idee
+                        </a>
+
+                    </div>
+                </section> -->
+
+                <section class="mx-auto mb-16">
+                    <div class="mx-auto px-4 flex flex-col">
+                        <div class="max-w-4xl mx-auto bg-milk border-2 border-black rounded-3xl p-8 md:p-12">
+
+                            <h3 class="text-2xl font-bold mb-16">
+                                Waarom kies je voor onze contenttools?
+                            </h3>
+                            <div class="space-y-16">
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden">
+                                    <button class="w-full px-2 py-2 text-lg font-bold text-left bg-mint">
+                                        Gratis advies
+                                    </button>
+                                    <div
+                                        class="px-2 py-2 border-t-2 border-black bg-white font-normal flex items-center">
+                                        We luisteren graag naar jouw verhaal en geven steeds vrijblijvend ons beste
+                                        advies.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden">
+                                    <button class="w-full px-2 py-2 text-lg font-bold text-left bg-mint">
+                                        Op maat gemaakt, binnen je budget
+                                    </button>
+                                    <div
+                                        class="px-2 py-2 border-t-2 border-black bg-white font-normal flex items-center">
+                                        We gaan steeds op zoek naar de meest geschikte oplossing die het best aansluit
+                                        bij je
+                                        noden en past binnen je budget.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden">
+                                    <button class="w-full px-2 py-2 text-lg font-bold text-left bg-mint">
+                                        Makkelijk schaalbaar
+                                    </button>
+                                    <div
+                                        class="px-2 py-2 border-t-2 border-black bg-white font-normal flex items-center">
+                                        We bouwen op maat gemaakte websites en applicaties die geen technische
+                                        beperkingen
+                                        kennen en zich eenvoudig kunnen aanpassen aan je groeiende en veranderende
+                                        online
+                                        behoeften.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden">
+                                    <button class="w-full px-2 py-2 text-lg font-bold text-left bg-mint">
+                                        Duidelijke tarieven
+                                    </button>
+                                    <div
+                                        class="px-2 py-2 border-t-2 border-black bg-white font-normal flex items-center">
+                                        Onze tarieven zijn helder en we presenteren enkel voorstellen die noodzakelijk
+                                        zijn
+                                        voor uw succes, zonder verborgen kosten of overbodige extra's.
+                                    </div>
+                                </div>
+
+                                <div class="border-2 border-black rounded-lg overflow-hidden">
+                                    <button
+                                        class="accordion-header w-full px-2 py-2 text-lg font-bold text-left bg-mint">
+                                        Duurzame samenwerking
+                                    </button>
+                                    <div
+                                        class="px-2 py-2 border-t-2 border-black bg-white font-normal flex items-center">
+                                        Wij bieden altijd vrijblijvend advies en streven naar een langdurige
+                                        samenwerking. We
+                                        verwijzen u eerlijk door als een andere oplossing beter bij uw project past.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="contact.html"
+                                class="w-fit inline-block px-6 py-2 mt-16 border-2 border-black rounded-full bg-mint hover:bg-pink transition-colors duration-350 text-base font-bold">
+                                Vraag gratis advies
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

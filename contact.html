@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="./style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentClub - Contact</title>
+</head>
+
+<body class="text-black selection:bg-yellow selection:text-black geometric-scatter">
+  <svg id="noise-filter" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+    <filter id="grainy-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComposite operator="in" in2="SourceGraphic" result="grain" />
+      <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+    </filter>
+
+    <filter id="grainy-noise-2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.67" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComposite operator="in" in2="SourceGraphic" result="grain" />
+      <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+    </filter>
+
+    <filter id="blob-shape">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -7
+            " result="goo" />
+    </filter>
+  </svg>
+
+  <div id="header-placeholder"></div>
+
+  <div class="vertical-scroll-container scroll-section">
+
+    <section id="platform" class="mb-8 mt-16">
+      <div class="container max-w-6xl px-4 md:px-8 mx-auto">
+
+        <div class="max-w-6xl mx-auto">
+          <h1
+            class="text-center text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none mb-8 bg-gradient-to-r from-black via-gray-700 to-black bg-clip-text text-transparent">
+            Contact
+          </h1>
+
+          <div class="mx-auto max-w-3xl mb-16">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-16 text-center">
+              Contentclub faciliteert <mark class="bg-yellow text-black px-1.5">shoots</mark> en creërt
+              <mark class="bg-yellow text-black px-1.5">online tools</mark>. We nemen technische en logistieke drempels
+              weg, zodat creators zich volledig kunnen richten
+              op wat
+              echt telt: hun <mark class="bg-yellow text-black px-1.5">verhaal online</mark> brengen.
+            </p>
+            <!-- Contactformulier -->
+            <form class="bg-milk border-3 border-coal rounded-4xl p-8 w-full max-w-xl mx-auto mt-12">
+              <h2 class="text-2xl font-bold mb-6">Stel je vraag of plaats een bestelling</h2>
+
+              <!-- Datepicker and planned events -->
+
+              <div class="mt-6">
+                <label for="afspraak" class="block text-sm font-medium text-gray-700">Kies een datum en tijd</label>
+                <input id="afspraak" type="text"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                  placeholder="Selecteer datum en tijd" />
+              </div>
+
+              <div id="blockedInfo" class="mt-4 text-sm text-gray-700 space-y-2"></div>
+
+
+              <!-- Productkeuze -->
+              <label for="productSelect" class="block font-semibold mb-2">Waarover gaat je aanvraag?</label>
+              <select id="productSelect" name="product" class="w-full p-2 border-2 border-coal rounded-lg mb-6">
+                <option value="">Kies een optie</option>
+                <option value="Starterspakket">Starterspakket</option>
+                <option value="JoinEenContentshoot">Join een Shoot</option>
+                <option value="DIYShoot">DIY Shoot</option>
+                <option value="Contentstudio">Content Studio</option>
+                <option value="FotograafOpBestelling">Fotograaf op Bestelling</option>
+                <option value="BouwJeContentproductieomgeving">Bouw je Contentproductie omgeving</option>
+                <option value="AndereVraag">Andere vraag</option>
+              </select>
+
+              <!-- Naam -->
+              <label for="name" class="block font-semibold mb-2">Naam</label>
+              <input type="text" id="name" name="name" required class="w-full p-2 border-2 border-coal rounded-lg mb-6"
+                placeholder="Je naam">
+
+              <!-- E-mail -->
+              <label for="email" class="block font-semibold mb-2">E-mailadres</label>
+              <input type="email" id="email" name="email" required
+                class="w-full p-2 border-2 border-coal rounded-lg mb-6" placeholder="Je e-mailadres">
+
+              <!-- Bericht -->
+              <label for="message" class="block font-semibold mb-2">Je vraag of extra info</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full p-2 border-2 border-coal rounded-lg mb-6"
+                placeholder="Beschrijf je aanvraag of stel je vraag..."></textarea>
+
+              <!-- Verzenden knop -->
+              <button type="submit"
+                class="font-semibold px-6 py-2 border-2 rounded-2xl bg-mint hover:bg-lime transition-all duration-350">
+                Verstuur
+              </button>
+
+              <!-- Info onderaan -->
+              <p class="text-sm text-coal mt-6 leading-relaxed">
+                We verwerken je vraag of bestelling zo snel mogelijk. Zodra we je bestelling hebben verwerkt, ontvang je
+                van ons
+                een betalingsverzoek. Na ontvangst van je betaling is je bestelling bevestigd.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/scripts.js"></script>
+</body>
+
+<script>
+  // 1. Ophalen van product vanuit URL (bv. contact.html?product=DIY%20Shoot)
+  const urlParams = new URLSearchParams(window.location.search);
+  const productFromUrl = urlParams.get("product");
+
+  // 2. Product uit URL instellen indien aanwezig
+  const productSelect = document.getElementById("productSelect");
+  if (productFromUrl) {
+    for (let option of productSelect.options) {
+      if (option.value === productFromUrl) {
+        option.selected = true;
+        break;
+      }
+    }
+  }
+
+  // 3. Automatisch product doorgeven bij klik op specifieke knoppen met data-product attribuut
+  document.querySelectorAll("[data-product]").forEach(button => {
+    button.addEventListener("click", e => {
+      const product = e.target.dataset.product;
+      if (product) {
+        const targetUrl = "contact.html?product=" + encodeURIComponent(product);
+        window.location.href = targetUrl;
+      }
+    });
+  });
+</script>
+
+<script>
+  fetch('/data/blocked-times.json')
+    .then(response => response.json())
+    .then(data => {
+      const blockedDates = data.blocked || [];
+
+      // Maak een map voor snelle toegang tot info per datum
+      const blockedMap = new Map();
+      const disableDates = [];
+
+      // Vul de map en verzamel data om te blokkeren
+      blockedDates.forEach(item => {
+        blockedMap.set(item.date, item.reason || "Niet beschikbaar");
+        disableDates.push(item.date);
+      });
+
+      // Initieer Flatpickr
+      flatpickr("#afspraak", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        disable: disableDates,
+        locale: {
+          firstDayOfWeek: 1
+        }
+      });
+
+      // Toon onder de kalender een lijst van geblokkeerde data met reden
+      const blockedInfo = document.getElementById("blockedInfo");
+
+      if (blockedDates.length > 0) {
+        blockedInfo.innerHTML = `
+          <p class="font-semibold mb-2">Volgende bezette dagen:</p>
+          <ul class="list-disc pl-4 space-y-1">
+            ${blockedDates.map(item => `
+              <li><strong>${item.date}</strong>: ${item.reason}</li>
+            `).join('')}
+          </ul>
+        `;
+      }
+    });
+</script>
+
+</html>

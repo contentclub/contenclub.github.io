@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentClub - ContentShoots</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body class="text-black selection:bg-yellow selection:text-black geometric-scatter">
+    <svg id="noise-filter" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+        <filter id="grainy-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComposite operator="in" in2="SourceGraphic" result="grain" />
+            <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+        </filter>
+
+        <filter id="grainy-noise-2">
+            <feTurbulence type="fractalNoise" baseFrequency="0.67" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComposite operator="in" in2="SourceGraphic" result="grain" />
+            <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+        </filter>
+
+        <filter id="blob-shape">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -7
+            " result="goo" />
+        </filter>
+    </svg>
+
+    <div id="header-placeholder"></div>
+
+    <div class="vertical-scroll-container scroll-section">
+
+        <section id="contentshoots" class="my-24 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+
+                <!-- Titel -->
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none mb-4 bg-gradient-to-r from-black via-gray-700 to-black bg-clip-text text-transparent">
+                    Foto- en Contentshoots
+                </h1>
+
+                <!-- Subtitel -->
+                <h2 class="text-xl md:text-2xl lg:text-2xl font-semibold tracking-tight text-gray-800 mb-12">
+                    Next level contentcreatie, voor iedereen
+                </h2>
+
+                <!-- Introductie -->
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-16">
+                    Wij organiseren shoots op unieke, uitgewerkte locaties waar je als <strong>bedrijf</strong>,
+                    <strong>creator</strong> of
+                    <strong>enthousiasteling</strong>
+                    zorgeloos en efficiënt content kan komen maken.
+                </p>
+
+                <!-- Card met details -->
+                <div class="max-w-2xl mx-auto bg-milk border-2 border-black rounded-3xl p-12 text-left">
+
+                    <h3 class="text-2xl font-bold mb-4 md:mb-8 text-gray-800">Moeiteloos content shooten</h3>
+
+                    <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                        Of je nu als contentcreator of marketeer
+                        beelden wil maken voor een campagne, als fotograaf wil
+                        komen
+                        <mark class="bg-yellow text-black px-1.5">shooten</mark> met je <mark
+                            class="bg-yellow text-black px-1.5">klanten</mark>, of gewoon je creatieve skills wil
+                        ontwikkelen en ervaren hoe het is te
+                        shooten
+                        met <mark class="bg-yellow text-black px-1.5">modellen</mark> in een <mark
+                            class="bg-yellow text-black px-1.5">studiosetting</mark> of ingerichte lokatie: bij ons kan
+                        je zo aan de slag.
+                    </p>
+                    <p class="text-base font-semibold leading-relaxed text-gray-700 mb-4">
+                        Sommige shoots zijn erop gericht zo snel mogelijk veel <strong>content</strong> te
+                        <strong>creëren</strong>, bij andere gaat het
+                        meer om de <strong>beleving</strong>.
+                    </p>
+                    <p class="text-base font-semibold leading-relaxed text-gray-700 mb-8">
+                        Je hoeft <strong>geen eigen materiaal</strong> of <strong>technische
+                            voorkennis</strong> te hebben. Wij stellen begeleiding,
+                        technisch materiaal,
+                        modellen, decors en props ter beschikking, en jij bepaalt zelf wat je nodig hebt voor jouw
+                        shoot.
+                    </p>
+                    <!-- <a href="#aankomende-shoots"
+                        class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+                        Bekijk aankomende shoots
+                    </a>-->
+                    <a href="#aankomende-shoots"
+                        class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+                        Aankomende shoots
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="aankomende-shoots" class="mb-24">
+            <div class="container w-full max-w-7xl px-4 md:px-8 mx-auto">
+                <h2
+                    class="text-xl md:text-2xl lg:text-2xl font-semibold tracking-tight text-center text-gray-800 mb-24">
+                    Aankomende Shoots
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+
+                    <div
+                        class="border-3 border-black rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] p-8 flex flex-col justify-between w-full max-w-sm">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">Urban Streetwear 🛹</h4>
+                            <ul class="text-base space-y-1 text-gray-700">
+                                <li><strong>Model:</strong> Alex Jansen</li>
+                                <li><strong>Locatie:</strong> Gent, graffiti muren</li>
+                                <li><strong>Datum:</strong> 25 oktober 2024</li>
+                                <li><strong>Props:</strong> Skateboards, vintage gadgets</li>
+                                <li><strong>Vanaf prijs:</strong> €150</li>
+                                <li><strong>Materiaal:</strong> Fuji XT2, 600W flitsers</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html"
+                            class="mt-8 px-4 py-2 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-300 text-center font-bold uppercase text-sm">
+                            Boek nu
+                        </a>
+                    </div>
+
+                    <div
+                        class="border-3 border-black rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] p-8 flex flex-col justify-between w-full max-w-sm">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">Natuurportretten 🌿</h4>
+                            <ul class="text-base space-y-1 text-gray-700">
+                                <li><strong>Model:</strong> Sophie Declerck</li>
+                                <li><strong>Locatie:</strong> Nationaal Park Hoge Kempen</li>
+                                <li><strong>Datum:</strong> 10 november 2024</li>
+                                <li><strong>Props:</strong> Bloemen, takken, natuurlijke elementen</li>
+                                <li><strong>Vanaf prijs:</strong> €180</li>
+                                <li><strong>Materiaal:</strong> Fuji XT2, 600W flitsers</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html"
+                            class="mt-8 px-4 py-2 border-2 border-black rounded-full bg-pink hover:bg-mint transition-all duration-300 text-center font-bold uppercase text-sm">
+                            Boek nu
+                        </a>
+                    </div>
+
+                    <div
+                        class="border-3 border-black rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] p-8 flex flex-col justify-between w-full max-w-sm">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">High-tech Minimalisme ⚡</h4>
+                            <ul class="text-base space-y-1 text-gray-700">
+                                <li><strong>Model:</strong> Lars Peters</li>
+                                <li><strong>Locatie:</strong> Studio 1, Contentclub</li>
+                                <li><strong>Datum:</strong> 23 november 2024</li>
+                                <li><strong>Props:</strong> Lichtsabels, futuristische gadgets</li>
+                                <li><strong>Vanaf prijs:</strong> €160</li>
+                                <li><strong>Materiaal:</strong> Fuji XT2, 600W flitsers</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html"
+                            class="mt-8 px-4 py-2 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-300 text-center font-bold uppercase text-sm">
+                            Boek nu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

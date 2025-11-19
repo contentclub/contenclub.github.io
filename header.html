@@ -1,0 +1,46 @@
+<header
+    class="fixed top-0 left-0 w-full z-10 p-4 flex justify-between items-center text-sm font-semibold bg-opacity-10 backdrop-blur-md shadow-md">
+
+    <a href="index.html"
+        class="text-xl font-bold tracking-tighter text-center leading-none z-30 font-heading">ContentClub</a>
+
+    <div class="hidden md:flex items-center space-x-12">
+
+        <nav class="flex items-center space-x-4">
+            <a href="contentshoots.html"
+                class="px-3 py-2  rounded-full border border-black hover:bg-mint hover:shadow-md hover:text-black transition-all duration-200">ContentShoots</a>
+            <a href="contenttools.html"
+                class="px-3 py-2 rounded-full border border-black hover:bg-mint hover:shadow-md hover:text-black transition-all duration-200">ContentTools</a>
+            <a href="contentculture.html"
+                class="px-3 py-2 rounded-full border border-black hover:bg-mint hover:shadow-md hover:text-black transition-all duration-200">ContentCulture
+            </a>
+        </nav>
+
+        <a href="contact.html"
+            class="px-3 py-2 rounded-full border border-black bg-mint hover:shadow-md hover:bg-rose transition-all duration-200">
+            Stel je vraag
+        </a>
+    </div>
+
+    <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none z-30 relative" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-black transition-all duration-200 ease-out transform origin-center mb-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-all duration-200 ease-out transform origin-center mb-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-all duration-200 ease-out transform origin-center"></span>
+    </button>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 w-full h-screen bg-white bg-opacity-95 pt-32 px-4 transition-transform duration-500 ease-out transform -translate-y-full z-20">
+
+        <nav class="flex flex-col items-center space-y-12 text-lg font-bold">
+            <a href="contentshoots.html"
+                class="inline-block mx-auto px-3 py-1 transition-colors rounded-full border border-black bg-mint hover:text-black">ContentShoots</a>
+            <a href="contenttools.html"
+                class="inline-block mx-auto px-3 py-1 transition-colors rounded-full border border-black bg-mint hover:text-black">ContentTools</a>
+            <a href="contentculture.html"
+                class="inline-block mx-auto px-3 py-1 transition-colors rounded-full border border-black bg-mint hover:text-black">ContentCulture</a>
+            <a href="contact.html"
+                class="inline-block mx-auto px-3 py-1 transition-colors rounded-full border border-black bg-mint hover:text-black">Stel
+                je vraag</a>
+        </nav>
+    </div>
+</header>
