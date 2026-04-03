@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bedankt - ContentClub</title>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body
+    class="text-black selection:bg-yellow selection:text-black geometric-scatter min-h-screen flex flex-col"
+  >
+    <svg
+      id="noise-filter"
+      class="absolute w-0 h-0 pointer-events-none"
+      aria-hidden="true"
+    >
+      <filter id="grainy-noise">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+        <feComposite operator="in" in2="SourceGraphic" result="grain" />
+        <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+      </filter>
+    </svg>
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow flex items-center justify-center py-24">
+      <div class="container max-w-2xl px-6 mx-auto">
+        <div
+          class="bg-milk border-black border-2 rounded-4xl p-8 md:p-16 shadow-xl text-center relative overflow-hidden"
+        >
+          <div class="relative z-10">
+            <h1
+              class="text-4xl md:text-5xl font-extrabold tracking-tighter leading-none mb-6"
+            >
+              Bedankt! 🤗
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
+              Je bericht is verzonden naar
+              <mark class="bg-yellow text-black px-1.5">ContentClub</mark>. We
+              bekijken je vraag en komen er zo snel mogelijk op terug.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="index.html"
+                id="home-button"
+                class="px-6 py-3 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold shadow-md"
+              >
+                Terug naar de homepage <span id="timer">(6)</span>
+              </a>
+              <a
+                href="https://instagram.com/contentclub.be"
+                target="_blank"
+                class="px-6 py-3 border-2 border-black rounded-full bg-white hover:bg-yellow transition-all duration-200 font-bold shadow-md"
+              >
+                Bekijk onze Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

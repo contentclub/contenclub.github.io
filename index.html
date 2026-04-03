@@ -215,28 +215,63 @@
         </p>
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="b7377a3d-516c-4105-bd59-8b1f893cccc7">
-          <div class="mb-4">
-            <label for="jouwVraag" class="block text-gray-700 font-semibold mb-4">Jouw vraag</label>
-            <textarea id="jouwVraag" class="w-full p-2 mt-1 border-2 border-gray-200 rounded-md bg-white"
-              rows="4"></textarea>
+
+          <div class="mb-6">
+            <label for="jouwVraag" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+              Jouw vraag
+            </label>
+            <textarea 
+              id="jouwVraag" 
+              name="bericht" 
+              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
+              rows="4" 
+              required
+            ></textarea>
           </div>
-          <div class="mb-4">
-            <label for="voornaamEnAchternaam" class="block text-gray-700 font-semibold mb-4">Naam</label>
-            <input id="voornaamEnAchternaam" type="text"
-              class="w-full p-2 mt-1 border-2 border-gray-200 rounded-md bg-white" />
+
+          <div class="mb-6">
+            <label for="voornaamEnAchternaam" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+              Naam
+            </label>
+            <input 
+              id="voornaamEnAchternaam" 
+              name="naam" 
+              type="text" 
+              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
+              required 
+            />
           </div>
-          <div class="mb-4">
-            <label for="email" class="block text-gray-700 font-semibold mb-4">Email</label>
-            <input id="email" type="email" class="w-full p-2 mt-1 border-2 border-gray-200 rounded-md bg-white" />
+
+          <div class="mb-6">
+            <label for="email" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+              Email
+            </label>
+            <input 
+              id="email" 
+              name="email" 
+              type="email" 
+              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
+              required 
+            />
           </div>
-          <div class="mb-4">
-            <label for="telefoonnummer" class="block text-gray-700 font-semibold mb-4">Telefoonnummer</label>
-            <input id="telefoonnummer" type="text"
-              class="w-full p-2 mt-1 mb-8 border-2 border-gray-200 rounded-md bg-white" />
+
+          <div class="mb-8">
+            <label for="telefoonnummer" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+              Telefoonnummer
+            </label>
+            <input 
+              id="telefoonnummer" 
+              name="telefoon" 
+              type="text" 
+              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
+            />
           </div>
+
           <div>
-            <button type="submit"
-              class="inline-block px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold">
+            <button 
+              type="submit" 
+              class="inline-block px-8 py-3 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold cursor-pointer"
+            >
               Verzenden
             </button>
           </div>
