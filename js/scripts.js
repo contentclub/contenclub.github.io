@@ -18,9 +18,7 @@ function typeEffect(element, text, speed = 50) {
       i++;
     } else {
       clearInterval(interval);
-      const hiddenSpan = element.querySelector(
-        'span[style*="visibility: hidden"]',
-      );
+      const hiddenSpan = element.querySelector('span[style*="visibility: hidden"]');
       if (hiddenSpan) {
         element.removeChild(hiddenSpan);
       }
@@ -39,8 +37,7 @@ async function loadHeader() {
   if (headerPlaceholder) {
     try {
       const response = await fetch("header.html");
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const headerContent = await response.text();
       headerPlaceholder.innerHTML = headerContent;
 
@@ -66,8 +63,7 @@ async function loadFooter() {
   if (footerPlaceholder) {
     try {
       const response = await fetch("footer.html");
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       footerPlaceholder.innerHTML = await response.text();
     } catch (error) {
       console.error("Failed to load footer:", error);
@@ -111,9 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Navigatielink markeren
   navLinks.forEach((link) => {
-    const linkHref = link
-      .getAttribute("href")
-      .replace(window.location.origin, "");
+    const linkHref = link.getAttribute("href").replace(window.location.origin, "");
     const currentPath = window.location.pathname + window.location.hash;
     if (currentPath.includes(linkHref) && linkHref !== "#") {
       link.classList.add("active");
@@ -168,11 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (titleElement && !titleElement.hasAttribute("data-typed")) {
         typeEffect(titleElement, titleElement.textContent.trim());
         titleElement.setAttribute("data-typed", "true");
-      } else if (
-        introSubtitle &&
-        entry.target.id === "intro" &&
-        !introSubtitle.hasAttribute("data-typed")
-      ) {
+      } else if (introSubtitle && entry.target.id === "intro" && !introSubtitle.hasAttribute("data-typed")) {
         typeEffect(introSubtitle, introSubtitle.textContent.trim());
         introSubtitle.setAttribute("data-typed", "true");
       }
@@ -218,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /**
  * Contentplatform Pakket Configurator
  */
-const basePrice = 1000;
+const basePrice = 2000;
 const totalPriceElement = document.getElementById("total-price");
 const packageContainer = document.getElementById("extra-items");
 const extraOptionsContainer = document.getElementById("extra-options");
@@ -239,10 +229,8 @@ function updatePrice() {
   });
   totalPriceElement.textContent = `€${total}`;
   if (contactLink) {
-    const encodedLabels = addedLabels
-      .map((l) => encodeURIComponent(l))
-      .join(",");
-    contactLink.href = `contact.html?base=${basePrice}&total=${total}&extras=${encodedLabels}`;
+    const encodedLabels = addedLabels.map((l) => encodeURIComponent(l)).join(",");
+    contactLink.href = `contact.html?product=ContentTools&base=${basePrice}&total=${total}&extras=${encodedLabels}`;
   }
 }
 
@@ -256,17 +244,14 @@ function addItem(label, price) {
   }
 
   if (!document.querySelector(`#extra-items [data-label="${label}"].added`)) {
-    const extraItem = document.querySelector(
-      `#extra-options [data-label="${label}"]`,
-    );
+    const extraItem = document.querySelector(`#extra-options [data-label="${label}"]`);
     if (extraItem) {
       extraItem.classList.add("fade-out");
       setTimeout(() => extraItem.remove(), 300);
     }
 
     const newItem = document.createElement("li");
-    newItem.className =
-      "flex items-center gap-2 font-semibold added px-4 py-2 rounded-full bg-white border border-black border-1 fade-in";
+    newItem.className = "flex items-center gap-2 font-semibold added px-4 py-2 rounded-full bg-white border border-black border-1 fade-in";
     newItem.dataset.label = label;
     newItem.dataset.price = price;
     newItem.innerHTML = `🗸 ${label} <button onclick="removeItem(this)" class="ml-auto cursor-pointer">🗑️</button>`;
@@ -292,9 +277,7 @@ function removeItem(button) {
   newExtraItem.dataset.label = label;
   newExtraItem.dataset.price = price;
   newExtraItem.draggable = true;
-  newExtraItem.innerHTML = isDrupal
-    ? `💻 **Drupal CMS** (**Op aanvraag**)`
-    : `${label} (+ €${price})`;
+  newExtraItem.innerHTML = isDrupal ? `💻 **Drupal CMS** (**Op aanvraag**)` : `${label} (+ €${price})`;
 
   newExtraItem.addEventListener("dragstart", (e) => {
     e.dataTransfer.setData("text", e.target.dataset.label);
@@ -310,9 +293,7 @@ document.querySelectorAll(".draggable-item").forEach((item) => {
     e.dataTransfer.setData("text", e.target.dataset.label);
     e.dataTransfer.setData("price", e.target.dataset.price);
   });
-  item.addEventListener("click", () =>
-    addItem(item.dataset.label, item.dataset.price),
-  );
+  item.addEventListener("click", () => addItem(item.dataset.label, item.dataset.price));
 });
 
 // CSS Animaties

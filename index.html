@@ -1,286 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentClub - Contentshoots, tools & cultuur</title>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ContentClub - Contentshoots, tools & cultuur</title>
-  <link href="./style.css" rel="stylesheet" />
-</head>
-
-<body class="text-black selection:bg-yellow selection:text-black geometric-scatter">
-  <svg id="noise-filter" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
-    <filter id="grainy-noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-      <feColorMatrix type="saturate" values="0" />
-      <feComposite operator="in" in2="SourceGraphic" result="grain" />
-      <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
-    </filter>
-    <filter id="grainy-noise-2">
-      <feTurbulence type="fractalNoise" baseFrequency="0.67" numOctaves="3" stitchTiles="stitch" />
-      <feColorMatrix type="saturate" values="0" />
-      <feComposite operator="in" in2="SourceGraphic" result="grain" />
-      <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
-    </filter>
-    <filter id="blob-shape">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="
+  <body class="text-black selection:bg-yellow selection:text-black geometric-scatter">
+    <svg id="noise-filter" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+      <filter id="grainy-noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+        <feComposite operator="in" in2="SourceGraphic" result="grain" />
+        <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+      </filter>
+      <filter id="grainy-noise-2">
+        <feTurbulence type="fractalNoise" baseFrequency="0.67" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+        <feComposite operator="in" in2="SourceGraphic" result="grain" />
+        <feBlend mode="multiply" in="SourceGraphic" in2="grain" />
+      </filter>
+      <filter id="blob-shape">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="
                 1 0 0 0 0
                 0 1 0 0 0
                 0 0 1 0 0
                 0 0 0 18 -7
-            " result="goo" />
-    </filter>
-  </svg>
-  <div id="header-placeholder"></div>
-  <!-- Intro -->
-  <section id="intro" class="mt-24 mb-16 scroll-section">
-    <div class="container max-w-4xl px-6 mx-auto flex flex-col">
-      <div class="bg-milk border-black border-2 rounded-4xl p-6 md:p-12 shadow-xl max-w-2xl mx-auto">
-
-        <!-- Rij 1: titel + subtitel -->
-        <div>
-          <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none mb-2 bg-gradient-to-r from-black via-gray-700 to-black bg-clip-text text-transparent">
-            ContentClub
-          </h1>
-          <h2 class="text-xl md:text-2xl lg:text-2xl font-semibold tracking-tight text-gray-800 mb-10">
-            Jouw verhaal, online
-          </h2>
-        </div>
-
-        <!-- Rij 2: links tekst, rechts knoppen -->
-        <div class="flex flex-row justify-between items-start relative">
-          <!-- Linkerzijde -->
-          <div class="flex flex-col w-full md:w-2/3">
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-              We bouwen <mark class="bg-yellow text-black px-1.5">applicaties</mark> en organiseren
-              <mark class="bg-yellow text-black px-1.5">shoots</mark> die je helpen jouw verhaal online te brengen.
-            </p>
-          </div>
-          <div class="hidden md:flex flex-col gap-6 items-start relative -top-3 md:-top-8 w-0 md:w-1/3">
-            <a href="contenttools.html"
-              class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[-4deg] shadow-md">
-              ContentTools
-            </a>
-            <a href="contentshoots.html"
-              class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[-1deg] shadow-md">
-              ContentShoots
-            </a>
-            <a href="contact.html"
-              class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[3deg] shadow-md">
-              Ontdek hoe
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- contentplatform -->
-  <section class="mx-auto mb-24 px-6">
-    <div id="contentplatform"
-      class="border-3 border-black rounded-4xl bg-pink shadow-lg pt-2 px-2 pb-12 relative w-xs mx-auto mb-24">
-      <div class="flex flex-col h-[95%] w-full bg-milk border-3 border-black rounded-lg px-4 py-8 mt-4">
-        <h3 class="text-3xl font-bold mb-7 pb-1">Je eigen content&shy;platform 👀</h3>
-        <p class="mb-8 min-h-16 text-lg">
-          Breng je content <mark class="bg-yellow text-black px-1.5">rechtstreeks</mark> naar je volgers, op je eigen
-          platform, onder <mark class="bg-yellow text-black px-1.5">jouw voorwaarden</mark>.
-        </p>
-        <a href="contenttools.html"
-          class="px-3 py-1 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
-          Ontdek hoe
-        </a>
-      </div>
-      <a href="contenttools.html"
-        class="absolute bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 hover:bg-mint border-2 border-black rounded-full bg-pink transition-all duration-200"></a>
-    </div>
-  </section>
-  <!-- Shoots -->
-  <section id="shoots" class="mb-24">
-    <div class="container mx-auto px-8 flex flex-col max-w-7xl">
-      <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-md mx-auto shadow-lg">
-        <h3 class="text-2xl md:text-3xl tracking-tighter leading-none font-bold mb-7 pb-1 w-fit">
-          ContentShoots
-        </h3>
-        <h3 class="mb-6 text-base font-bold text-gray-700">
-          Waar vindt jouw volgende shoot plaats?
-        </h3>
-        <p class="mb-6">
-          Wij organiseren <mark class="bg-yellow px-1.5">foto- en contentshoots</mark> op unieke, uitgewerkte locaties
-          waar je als <mark class="bg-yellow px-1.5">bedrijf</mark>, <mark
-            class="bg-yellow text-black px-1.5">creator</mark> of <mark
-            class="bg-yellow text-black px-1.5">enthousiasteling</mark> zorgeloos en efficiënt content kan komen maken.
-        </p>
-        <p class="mb-8">
-          Van modellen tot decorelementen en technisch materiaal,
-          <mark class="bg-yellow text-black px-1.5">wij voorzien alles</mark> wat jij nodig hebt.
-        </p>
-        <a href="contentshoots.html"
-          class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
-          Bekijk aankomende shoots
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- Bouw je online habitat -->
-  <section class="mx-auto pt-8 mb-24 px-6">
-    <div
-      class="container w-xs md:w-full md:max-w-xl mx-auto border-3 border-black md:border-coal rounded-4xl md:rounded-2xl bg-pink shadow-lg pt-2 md:pt-3 px-2 md:px-3 pb-12 md:pb-8 relative flex flex-col flex-none items-center">
-      <div
-        class="flex flex-col h-[95%] md:h-[90%] w-full bg-milk border-3 border-black md:border-coal rounded-lg md:rounded-xl px-4 py-8 md:p-8 mt-4 md:mt-0">
-        <h3 class="text-2xl font-bold pb-6 w-fit">Bouw je online habitat 🏡</h3>
-        <p class="mb-6">
-          Begin je online avontuur met een website die jouw verhaal vertelt, past binnen je budget en
-          makkelijk kan meegroeien
-          met je digitale noden.
-        </p>
-        <div class="grid-cols-2 gap-6 mb-6 hidden sm:grid text-sm">
+            "
+          result="goo" />
+      </filter>
+    </svg>
+    <div id="header-placeholder"></div>
+    <!-- Intro -->
+    <section id="intro" class="mt-24 mb-16 scroll-section">
+      <div class="container max-w-4xl px-6 mx-auto flex flex-col">
+        <div class="bg-milk border-black border-2 rounded-4xl p-6 md:p-12 shadow-xl max-w-2xl mx-auto">
+          <!-- Rij 1: titel + subtitel -->
           <div>
-            <p class="flex items-center gap-2 font-bold">
-              🗸
-              Zonder verborgen kosten
-            </p>
-            <p class="flex items-center gap-2 font-bold">
-              🗸
-              Helemaal van jouw
-            </p>
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none mb-2 bg-gradient-to-r from-black via-gray-700 to-black bg-clip-text text-transparent">
+              ContentClub
+            </h1>
+            <h2 class="text-xl md:text-2xl lg:text-2xl font-semibold tracking-tight text-gray-800 mb-10">Jouw verhaal, online</h2>
           </div>
-          <div>
-            <p class="flex items-center gap-2 font-bold">
-              🗸
-              Technisch tiptop
-            </p>
-            <p class="flex items-center gap-2 font-bold">
-              🗸
-              Binnen de termijn
-            </p>
+
+          <!-- Rij 2: links tekst, rechts knoppen -->
+          <div class="flex flex-row justify-between items-start relative">
+            <!-- Linkerzijde -->
+            <div class="flex flex-col w-full md:w-2/3">
+              <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                We bouwen
+                <mark class="bg-yellow text-black px-1.5">applicaties</mark>
+                en organiseren
+                <mark class="bg-yellow text-black px-1.5">shoots</mark>
+                om jouw verhaal online te brengen.
+              </p>
+            </div>
+            <div class="hidden md:flex flex-col gap-6 items-start relative -top-3 md:-top-8 w-0 md:w-1/3">
+              <a
+                href="contenttools.html"
+                class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[-4deg] shadow-md">
+                ContentTools
+              </a>
+              <a
+                href="contentshoots.html"
+                class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[-1deg] shadow-md">
+                ContentShoots
+              </a>
+              <a
+                href="contact.html"
+                class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold rotate-[3deg] shadow-md">
+                Ontdek hoe
+              </a>
+            </div>
           </div>
         </div>
-        <a href="#contact"
-          class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
-          Bespreek je project
-        </a>
       </div>
+    </section>
+    <!-- contentplatform -->
+    <section class="mx-auto mb-24 px-6">
+      <div id="contentplatform" class="border-3 border-black rounded-4xl bg-pink shadow-lg pt-2 px-2 pb-12 relative w-xs mx-auto mb-24">
+        <div class="flex flex-col h-[95%] w-full bg-milk border-3 border-black rounded-lg px-4 py-8 mt-4">
+          <h3 class="text-3xl font-bold mb-7 pb-1">Je eigen content&shy;platform 👀</h3>
+          <p class="mb-8 min-h-16 text-lg">
+            Breng je content
+            <mark class="bg-yellow text-black px-1.5">rechtstreeks</mark>
+            naar je volgers, op je eigen platform, onder
+            <mark class="bg-yellow text-black px-1.5">jouw voorwaarden</mark>
+            .
+          </p>
+          <a href="contenttools.html" class="px-3 py-1 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+            Ontdek hoe
+          </a>
+        </div>
+        <a
+          href="contenttools.html"
+          class="absolute bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 hover:bg-mint border-2 border-black rounded-full bg-pink transition-all duration-200"></a>
+      </div>
+    </section>
+    <!-- Shoots -->
+    <section id="shoots" class="mb-24">
+      <div class="container mx-auto px-8 flex flex-col max-w-7xl">
+        <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-md mx-auto shadow-lg">
+          <h3 class="text-2xl md:text-3xl tracking-tighter leading-none font-bold mb-7 pb-1 w-fit">ContentShoots</h3>
+          <h3 class="mb-6 text-base font-bold text-gray-700">Waar vindt jouw volgende shoot plaats?</h3>
+          <p class="mb-6">
+            Wij organiseren
+            <mark class="bg-yellow px-1.5">foto- en contentshoots</mark>
+            op unieke, uitgewerkte locaties waar je als
+            <mark class="bg-yellow px-1.5">bedrijf</mark>
+            ,
+            <mark class="bg-yellow text-black px-1.5">creator</mark>
+            of
+            <mark class="bg-yellow text-black px-1.5">enthousiasteling</mark>
+            zorgeloos en efficiënt content kan komen maken.
+          </p>
+          <p class="mb-8">
+            Van modellen tot decorelementen en technisch materiaal,
+            <mark class="bg-yellow text-black px-1.5">wij voorzien alles</mark>
+            wat jij nodig hebt.
+          </p>
+          <a href="contentshoots.html" class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+            Bekijk aankomende shoots
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Bouw je online habitat -->
+    <section class="mx-auto pt-8 mb-24 px-6">
       <div
-        class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-16 h-6 bg-pink rounded-b-lg border-3 border-coal hidden md:block">
+        class="container w-xs md:w-full md:max-w-xl mx-auto border-3 border-black md:border-coal rounded-4xl md:rounded-2xl bg-pink shadow-lg pt-2 md:pt-3 px-2 md:px-3 pb-12 md:pb-8 relative flex flex-col flex-none items-center">
+        <div
+          class="flex flex-col h-[95%] md:h-[90%] w-full bg-milk border-3 border-black md:border-coal rounded-lg md:rounded-xl px-4 py-8 md:p-8 mt-4 md:mt-0">
+          <h3 class="text-2xl font-bold pb-6 w-fit">Bouw je online habitat 🏡</h3>
+          <p class="mb-6">
+            Begin je online avontuur met een website die jouw verhaal vertelt, past binnen je budget en makkelijk kan meegroeien met je digitale
+            noden.
+          </p>
+          <div class="grid-cols-2 gap-6 mb-6 hidden sm:grid text-sm">
+            <div>
+              <p class="flex items-center gap-2 font-bold">🗸 Zonder verborgen kosten</p>
+              <p class="flex items-center gap-2 font-bold">🗸 Helemaal van jouw</p>
+            </div>
+            <div>
+              <p class="flex items-center gap-2 font-bold">🗸 Technisch tiptop</p>
+              <p class="flex items-center gap-2 font-bold">🗸 Binnen de termijn</p>
+            </div>
+          </div>
+          <a href="contenttools.html" class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+            Meer info
+          </a>
+        </div>
+        <div class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-16 h-6 bg-pink rounded-b-lg border-3 border-coal hidden md:block"></div>
+        <div class="absolute bottom-[-37px] left-1/2 -translate-x-1/2 w-28 h-4 bg-pink rounded-t-lg border-3 border-coal hidden md:block"></div>
+        <a
+          href="contenttools.html"
+          class="absolute bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 hover:bg-mint border-2 border-black rounded-full bg-pink transition-all duration-200 md:hidden"></a>
       </div>
-      <div
-        class="absolute bottom-[-37px] left-1/2 -translate-x-1/2 w-28 h-4 bg-pink rounded-t-lg border-3 border-coal hidden md:block">
+    </section>
+    <!-- Contentculture -->
+    <section id="contentculture" class="mb-24">
+      <div class="container mx-auto px-8 flex flex-col max-w-7xl">
+        <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-md mx-auto shadow-lg">
+          <h3 class="text-3xl tracking-tighter leading-none font-bold mb-7 pb-1">ContentCulture</h3>
+
+          <p class="mb-8 text-lg text-gray-700">
+            ContentCulture onderzoekt hoe contentcreators onze
+            <mark class="bg-yellow text-black px-1.5">online cultuur</mark>
+            vormgeven. We bekijken wat content echt goed maakt en gaan dieper in op het
+            <mark class="bg-yellow text-black px-1.5">technische</mark>
+            en
+            <mark class="bg-yellow text-black px-1.5">creative aspect</mark>
+            van contentcreatie.
+          </p>
+
+          <a href="contentculture.html" class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
+            Bekijk meer
+          </a>
+        </div>
       </div>
-      <a href="contenttools.html"
-        class="absolute bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 hover:bg-mint border-2 border-black rounded-full bg-pink transition-all duration-200 md:hidden"></a>
-    </div>
-  </section>
-  <!-- Contentculture -->
-  <section id="contentculture" class="mb-24">
-    <div class="container mx-auto px-8 flex flex-col max-w-7xl">
-      <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-md mx-auto shadow-lg">
-        <h3 class="text-3xl tracking-tighter leading-none font-bold mb-7 pb-1">
-          ContentCulture
-        </h3>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="mb-24">
+      <div class="container mx-auto px-8 flex flex-col">
+        <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-4xl mx-auto shadow-lg">
+          <h4 class="text-2xl font-bold mb-8">Bespreek je project</h4>
+          <p class="mb-4">We zijn steeds geïnteresseerd in jouw verhaal.</p>
+          <p class="mb-4">
+            Bij een eerste contact geven we je
+            <mark class="bg-yellow text-black px-1.5">ons beste advies</mark>
+            ,
+            <mark class="bg-yellow text-black px-1.5">zonder</mark>
+            enige
+            <mark class="bg-yellow text-black px-1.5">verplichtingen</mark>
+            van jouw kant.
+          </p>
+          <p class="mb-8">
+            Stel hier je vraag,
+            <a href="tel:0486523899" class="decoration-dotted decoration-mint-400 underline underline-offset-2">bel ons</a>
+            op, of
+            <a
+              href="mailto:info@contentclub.be?SUBJECT=Vraag verzonden vanop de contentclub homepage"
+              class="decoration-dotted decoration-mint-400 underline underline-offset-2">
+              stuur een mailtje
+            </a>
+            .
+            <!-- of plan meteen een
+            <a href="#contact" class="decoration-dotted decoration-mint-400 underline underline-offset-2">online gesprek</a> -->
+          </p>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="b7377a3d-516c-4105-bd59-8b1f893cccc7" />
 
-        <p class="mb-8 text-lg text-gray-700">
-          ContentCulture onderzoekt hoe contentcreators onze <mark class="bg-yellow text-black px-1.5">online
-            cultuur</mark> vormgeven.
-          We bekijken wat content echt goed maakt en gaan dieper in op het <mark
-            class="bg-yellow text-black px-1.5">technische</mark> en <mark class="bg-yellow text-black px-1.5">creative
-            aspect</mark> van contentcreatie.
-        </p>
+            <div class="mb-6">
+              <label for="jouwVraag" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">Jouw vraag</label>
+              <textarea
+                id="jouwVraag"
+                name="bericht"
+                class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all"
+                rows="4"
+                required></textarea>
+            </div>
 
-        <a href="contentculture.html"
-          class="px-3 py-2 border-2 rounded-full bg-mint hover:bg-pink transition-all duration-200 w-fit font-bold">
-          Bekijk meer
-        </a>
+            <div class="mb-6">
+              <label for="voornaamEnAchternaam" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+                Naam
+              </label>
+              <input
+                id="voornaamEnAchternaam"
+                name="naam"
+                type="text"
+                class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all"
+                required />
+            </div>
+
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all"
+                required />
+            </div>
+
+            <div class="mb-8">
+              <label for="telefoonnummer" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
+                Telefoonnummer
+              </label>
+              <input
+                id="telefoonnummer"
+                name="telefoon"
+                type="text"
+                class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" />
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="inline-block px-8 py-3 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold cursor-pointer">
+                Verzenden
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- Contact -->
-  <section id="contact" class="mb-24">
-    <div class="container mx-auto px-8 flex flex-col">
-      <div class="bg-milk border-black border-2 rounded-3xl p-8 max-w-4xl mx-auto shadow-lg">
-        <h4 class="text-2xl font-bold mb-8">Bespreek je project</h4>
-        <p class="mb-4">We zijn steeds geïnteresseerd in jouw verhaal.</p>
-        <p class="mb-4">
-          Bij een eerste contact geven we je <mark class="bg-yellow text-black px-1.5">ons beste advies</mark>, <mark
-            class="bg-yellow text-black px-1.5">zonder</mark> enige
-          <mark class="bg-yellow text-black px-1.5">verplichtingen</mark> van jouw kant.
-        </p>
-        <p class="mb-8">
-          Stel hier je vraag,
-          <a href="tel:0486523899" class="decoration-dotted decoration-mint-400 underline underline-offset-2">bel
-            ons</a>
-          op, of plan meteen een
-          <a href="#contact" class="decoration-dotted decoration-mint-400 underline underline-offset-2">online
-            gesprek</a>.
-        </p>
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="b7377a3d-516c-4105-bd59-8b1f893cccc7">
-
-          <div class="mb-6">
-            <label for="jouwVraag" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
-              Jouw vraag
-            </label>
-            <textarea 
-              id="jouwVraag" 
-              name="bericht" 
-              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
-              rows="4" 
-              required
-            ></textarea>
-          </div>
-
-          <div class="mb-6">
-            <label for="voornaamEnAchternaam" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
-              Naam
-            </label>
-            <input 
-              id="voornaamEnAchternaam" 
-              name="naam" 
-              type="text" 
-              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
-              required 
-            />
-          </div>
-
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
-              Email
-            </label>
-            <input 
-              id="email" 
-              name="email" 
-              type="email" 
-              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
-              required 
-            />
-          </div>
-
-          <div class="mb-8">
-            <label for="telefoonnummer" class="block text-gray-700 font-semibold mb-2 transition-transform duration-200 origin-left">
-              Telefoonnummer
-            </label>
-            <input 
-              id="telefoonnummer" 
-              name="telefoon" 
-              type="text" 
-              class="w-full p-3 border-2 border-gray-200 rounded-xl bg-white focus:border-black outline-none transition-all" 
-            />
-          </div>
-
-          <div>
-            <button 
-              type="submit" 
-              class="inline-block px-8 py-3 border-2 border-black rounded-full bg-mint hover:bg-pink transition-all duration-200 font-bold cursor-pointer"
-            >
-              Verzenden
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  <div id="footer-placeholder"></div>
-  <script src="js/scripts.js"></script>
-</body>
-
+    </section>
+    <div id="footer-placeholder"></div>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
